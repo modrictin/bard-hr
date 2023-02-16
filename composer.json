@@ -1,0 +1,41 @@
+{
+  "name": "modrictin/bard-hr",
+  "description": "Bard HR line plugin",
+  "type": "statamic-addon",
+  "license": "MIT",
+  "keywords": [
+    "statamic",
+    "bard",
+    "hr"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Modrictin\\BardHR\\": "src"
+    }
+  },
+  "authors": [{
+    "name": "Tin Modric",
+    "email": "t.modric@bluespark.agency"
+  }],
+  "require": {
+    "php": "^5.3.2 || ^7.0 || ^8.0",
+    "statamic/cms": "^3.0.14",
+    "ueberdosis/prosemirror-to-html": "^2.6"
+  },
+  "extra": {
+    "statamic": {
+      "name": "Modrictin Bard HR plugin",
+      "description": "HR tag command for bard"
+    },
+    "laravel": {
+      "providers": [
+        "Modrictin\\BardHR\\ServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pixelfear/composer-dist-plugin": true
+    }
+  }
+}
