@@ -1,5 +1,5 @@
 # Bard HR tag addon for Statamic
-#### Forked from user: pecotamic
+## Forked from repository: pecotamic/bard-hr
 
 
 -----
