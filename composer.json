@@ -19,7 +19,7 @@
   }],
   "require": {
     "php": "^5.3.2 || ^7.0 || ^8.0",
-    "statamic/cms": "^4.*",
+    "statamic/cms": "^4.0",
     "ueberdosis/prosemirror-to-html": "^2.6"
   },
   "extra": {
