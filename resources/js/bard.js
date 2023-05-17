@@ -1,14 +1,12 @@
-import HR from './HR'
-import HRButton from './HRButton'
+import {HR} from './HR'
 
-Statamic.$bard.extend(() => new HR())
+Statamic.$bard.addExtension(() =>  HR)
 Statamic.$bard.buttons((buttons) => {
     buttons.push({
-        name: 'horizontal_ruler',
+        name: 'horizontalRuler',
         text: __('Horizontal Ruler'),
-        command: 'horizontal_ruler',
         args: {},
         html: '&mdash;',
-        component: HRButton,
+        command: (editor) => editor.chain().focus().addHorizontalRuler().run(),
     })
 })

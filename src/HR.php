@@ -2,15 +2,18 @@
 
 namespace Modrictin\BardHR;
 
-use ProseMirrorToHtml\Nodes\Node;
+use Tiptap\Core\Mark;
+use Tiptap\Core\Node;
+
 
 class HR extends Node
 {
-    protected $nodeType = 'horizontal_ruler';
-    protected $tagName = 'hr';
+    public static $name = 'horizontalRuler';
 
-    public function selfClosing()
+    public function renderHTML($mark, $attributes = []): array
     {
-        return true;
+        return [
+            'hr',
+        ];
     }
 }

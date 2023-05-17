@@ -14,7 +14,7 @@ export default {
     mixins: [BardToolbarButton],
     methods: {
         addHR() {
-            this.editor.commands.horizontal_ruler();
+            this.editor.commands.addHorizontalRuler();
         },
     },
 };

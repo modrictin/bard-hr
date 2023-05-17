@@ -1,33 +1,21 @@
-import Node from './base/Node'
+const { Node } = Statamic.$bard.tiptap.core;
 
-export default class HR extends Node {
-    get name() {
-        return 'horizontal_ruler'
-    }
-
-    get schema() {
+export const HR = Node.create({
+    name: 'horizontalRuler',
+    content: 'block*',
+    group: 'block',
+    parseHTML(){
+        return [{ tag: 'hr' }]
+    },
+    renderHTML() {
+        return ['hr',0];
+    },
+    addCommands() {
         return {
-            inline: false,
-            group: 'block',
-            isBlock: true,
-            parseDOM: [
-                {tag: 'hr'},
-            ],
-            toDOM: () => {
-                return ['hr']
-            },
-        }
-    }
-
-    commands({type}) {
-        return () => (state, dispatch) => {
-            const {selection} = state
-            const position = selection.anchor
-
-            const node = type.create()
-            dispatch(state.tr.insert(position, node))
-
-            return true;
-        }
-    }
-}
+            addHorizontalRuler: () => ({ tr, dispatch }) => {
+                dispatch(tr.replaceSelectionWith(this.type.create()));
+                return true;
+            }
+        };
+    },
+});

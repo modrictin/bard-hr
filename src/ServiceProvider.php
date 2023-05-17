@@ -14,6 +14,9 @@ class ServiceProvider extends AddonServiceProvider
     public function boot()
     {
         parent::boot();
-        Augmentor::addExtension('horizontal_ruler',HR::class);
+
+        Augmentor::addExtension('horizontal_ruler', new HR());
+
+
     }
 }
